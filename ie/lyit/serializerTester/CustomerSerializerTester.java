@@ -10,7 +10,7 @@ public class CustomerSerializerTester {
 	public static void main(String[] args) throws IOException {
 		CustomerSerializerDAOImpl Cust = new CustomerSerializerDAOImpl();
 		
-		Menu menuObj = new Menu();
+		Menu menuObj = Menu.getInstance();
 		
 		Cust.readFromFile();
 		System.out.println(Cust.getSizeArray());

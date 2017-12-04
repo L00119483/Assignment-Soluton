@@ -4,6 +4,17 @@ import java.util.Scanner;
 
 public class Menu {
 	private int option;
+	private static Menu menuInstance = null;
+	
+	private Menu() {
+		
+	}
+	public static Menu getInstance() {
+		if(menuInstance == null) {
+			menuInstance = new Menu();
+		}
+		return menuInstance;
+	}
 	
 	public void display(){
 
@@ -25,6 +36,7 @@ public class Menu {
 	public int getOption(){
 		return option;
 	}
+	
 
 }
 

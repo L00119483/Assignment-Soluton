@@ -1,3 +1,11 @@
+//
+//Assignment two
+//L00119483	
+//Oisin O'Donnell
+//Software Implementation 
+//BSC Computing 
+//3rd Year
+//
 package ie.lyit.DAOTester;
 
 import java.io.IOException;
@@ -8,17 +16,19 @@ import ie.lyit.hotel.Menu;
 public class CustomerDAOTester {
 
 	public static void main(String[] args) throws IOException {
+	
+		// Creating a instance of CustomerSerializerDAOImp called Cust.
 		CustomerSerializerDAOImpl Cust = new CustomerSerializerDAOImpl();
 		
-		Menu menuObj = new Menu();
+		Menu menu = Menu.getInstance();
 		
 		Cust.readFromFile();
 		System.out.println(Cust.getSizeArray());
 		do{
-			menuObj.display();
-			menuObj.readOption();
+			menu.display();
+			menu.readOption();
 			
-			switch(menuObj.getOption()){
+			switch(menu.getOption()){
 				case 1: Cust.add();
 					break;
 				case 2: Cust.view();
@@ -33,7 +43,7 @@ public class CustomerDAOTester {
 					break;
 				default: System.out.println("INVALID OPTION...");
 			}
-		}while(menuObj.getOption() != 6);
+		}while(menu.getOption() != 6);
 		
 		// Write the ArrayList to the File
 		Cust.writeToFile();
